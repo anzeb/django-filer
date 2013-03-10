@@ -59,6 +59,8 @@ class File(PolymorphicModel, mixins.IconsMixin):
                     'file. File will be publicly accessible ' +\
                     'to anyone.'))
 
+    is_private = models.BooleanField(_('is private file'), default=False)
+
     objects = FileManager()
 
     @classmethod
