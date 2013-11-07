@@ -39,14 +39,14 @@ class FileAdmin(PrimitivePermissionAwareModelAdmin):
                 'fields': ('name', 'owner', 'description',) + extra_main_fields,
             }),
             (_('Advanced'), {
-                'fields': ('is_private', 'file', 'sha1',) + extra_advanced_fields,
+                'fields': ('is_private', 'file', 'external_url', 'sha1',) + extra_advanced_fields,
                 'classes': ('collapse',),
                 }),
             ) + extra_fieldsets
         if settings.FILER_ENABLE_PERMISSIONS:
             fieldsets = fieldsets + (
                 (None, {
-                    'fields': ('is_public',)
+                    'fields': ('is_public', )
                 }),
             )
         return fieldsets

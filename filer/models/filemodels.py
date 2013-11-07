@@ -60,6 +60,8 @@ class File(PolymorphicModel, mixins.IconsMixin):
                     'to anyone.'))
 
     is_private = models.BooleanField(_('is private file'), default=False)
+    
+    external_url = models.CharField(max_length=255, blank=True, null=True)
 
     objects = FileManager()
 
